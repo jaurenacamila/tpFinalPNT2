@@ -1,33 +1,63 @@
 <template>
 
   <section class="src-components-formulario">
-    <div>
-      <h3>Formulario</h3>
+
+    <div class="jumbotron mt-3">
+
+      <h4>Alta de usuarios</h4>
       <hr>
 
-      <form>
+      <form :state="formState" @submit.prevent="enviar()">
+
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" autocomplete="off" 
+                   name="nombre" v-model.trim="formData.nombre" required :minlength="nombreMin" :maxlength="nombreMax">
+          </div>
+          
+          <div v-if="formData.nombre.length == nombreMax" class="alert alert-danger my-1">Máximo de caracteres alcanzados ({{nombreMax}})</div>
+     
+
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido">
+          
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <label for="dni">Dni</label>
+          <input type="number" class="form-control" id="dni"  placeholder="Ingrese el dni">
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="fechaNacimiento" placeholder="Ingrese la fecha de nacimiento">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <div class="form-group">
+          <label for="rol">Rol</label>
+          <input type="text" class="form-control" id="rol" placeholder="Ingrese el rol">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingrese el email">
+        </div>
+
+        <hr>
+  
+        <button type="submit" class="btn btn-secondary"  >Ingresar</button>
+
       </form>
 
     </div>
+
   </section>
 
 </template>
 
 <script lang="js">
+
+
 
   export default  {
     name: 'src-components-formulario',
@@ -37,10 +67,23 @@
     },
     data () {
       return {
+        formState : {},
+        formData : this.getInitialData(),
+        nombreMin:10,
+        nombreMax:30
 
       }
     },
     methods: {
+      eviar(){
+
+      },
+      getInitialData(){
+        return {
+          nombre: '',
+        }
+
+      }
 
     },
     computed: {
@@ -57,9 +100,20 @@
 
   }
   .form-group {
-    background-color: deeppink;
+   
     margin-left: 10px;
     margin-right: 10px;
+  }
+  h4 {
+    text-align: center;
+     text-decoration: underline;
+  }
+  button {
+    position:absolute;
+    margin: 10px;
+  }
+  .jumbotron {
+    background-color: darkslategrey;
   }
   
 </style>
