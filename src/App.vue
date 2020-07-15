@@ -3,14 +3,10 @@
   <div id="app">
     <div class="jumbotron">
       <div class="container">
-        <div class="btn-group">
-          <button type="button" class="btn btn-secondary">ABM Usuarios</button>
-          <button type="button" class="btn btn-secondary">Consulta Usuarios</button>
-          <button type="button" class="btn btn-secondary">Consulta Controles</button>
-          <button type="button" class="btn btn-secondary">Estadísticas</button>
-        </div>
-        <hr>
-        <Formulario />
+        <br>
+        <Navbar/>
+        <router-view></router-view>
+        <br>
         
       </div>
     </div>
@@ -20,12 +16,12 @@
 
 <script>
 
-  import Formulario from './components/Formulario.vue'
+  import Navbar from './components/Navbar.vue'
  
   export default {
     name: 'App',
     components: {
-      Formulario,
+      Navbar
       
     }
   }
@@ -43,10 +39,7 @@
     margin-top: 2px;
 }
 .container {
-  background-color: darkslategray;
-}
-.btn-group{
-  margin-top: 10px;
+  background-color: rgb(77, 78, 78);
 }
 
 </style>
