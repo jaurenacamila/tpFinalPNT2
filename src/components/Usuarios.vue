@@ -11,16 +11,16 @@
 
       <div class="media alert alert-info mt-4" v-for="(usuario, index) in usuarios" :key="index">
         <div class="media-body ml-3">
-          <h4><u>Usuario ID: {{ usuario.id }}</u></h4>
+          <h4><u>USUARIO ID: {{ usuario.id }}</u></h4>
           <br>
-          <p>Email: <b>{{ usuario.email }}</b></p>
-          <p>Password: <b>{{ usuario.password }}</b></p>
-          <p>Nombre: <b>{{ usuario.nombre }}</b></p>
-          <p>Apellido: <b>{{ usuario.apellido }}</b></p>
-          <p>Perfil: <b>{{ usuario.perfil }}</b></p>
-          <p>Habilitado: <b>{{ usuario.habilitado }}</b></p>
-          <p>HorasTrabajadas: <b>{{ usuario.hstrabajadas }}</b></p>
-          <button class="btn btn-dark m-3" @click="deleteUsuario(usuario.id)">Dar de Baja</button>
+          <p>Email: {{ usuario.email }}</p>
+          <p>Password: {{ usuario.password }}</p>
+          <p>Nombre: {{ usuario.nombre }}</p>
+          <p>Apellido: {{ usuario.apellido }}</p>
+          <p>Perfil: {{ usuario.perfil }}</p>
+          <p>Habilitado: {{ usuario.habilitado }}</p>
+          <p>HorasTrabajadas: {{ usuario.hstrabajadas }}></p>
+          <button class="btn btn-dark m-3" @click="deleteUsuario(usuario.id)">DAR DE BAJA</button>
         </div>
       </div>
 
@@ -90,6 +90,15 @@
 
   hr {
     background-color: white;
+  }
+
+  .media-body{
+     background-color: rgb(77, 78, 78);
+     color: whitesmoke
+  }
+
+  .media {
+    background-color: rgb(77, 78, 78);
   }
 
 </style>

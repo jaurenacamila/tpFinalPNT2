@@ -1,7 +1,7 @@
 <template>
 
   <section class="src-components-estadisticas">
-    <h1>src-components-estadisticas Component</h1>
+    <h1>Estadísticas</h1>
   </section>
 
 </template>

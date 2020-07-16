@@ -1,7 +1,7 @@
 <template>
 
   <section class="src-components-controles">
-    <h1>src-components-controles Component</h1>
+    <h1>Controles</h1>
   </section>
 
 </template>
